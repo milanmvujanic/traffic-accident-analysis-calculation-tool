@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "MRegular";
+  src: url("./fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "MBold";
+  src: url("./fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "MRegular", sans-serif;
+}
+
+.container {
+  background-color: #e0ebeb;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container form {
+  width: 400px;
+  padding: 20px;
+  background-color: #ccebff;
+  border: 2px solid #4d8fbb;
+  border-radius: 10px;
+}
+
+form h1 {
+  padding-bottom: 25px;
+  font-size: 1.6rem;
+}
+
+.invalidLogin {
+  background-color: #fac3c3;
+  color: rgba(255, 0, 0, 0.753);
+  padding: 15px 0px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.8rem;
+  font-family: "MBold";
+}
+
+.logout {
+  background-color: #8bf169;
+  color: #3da11b;
+  padding: 15px 0px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.8rem;
+  font-family: "MBold";
+}
+
+.success {
+  background-color: #8bf169;
+  color: #3da11b;
+  padding: 15px 0px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 0.8rem;
+  font-family: "MBold";
+}
+
+#email,
+#password,
+#name,
+#retypePassword {
+  width: 100%;
+  padding: 10px 10px 10px 30px;
+  border: 2px solid #4d8fbb;
+  border-width: 2px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+}
+
+#email:focus,
+#password:focus,
+#name:focus,
+#retypePassword:focus {
+  border-color: #4be42c;
+}
+
+.email,
+.password,
+.name,
+.retypePassword {
+  position: relative;
+}
+
+.name i {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+}
+
+.email i {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+}
+
+.password i {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+}
+
+.retypePassword i {
+  position: absolute;
+  left: 10px;
+  top: 11px;
+}
+
+input {
+  margin-bottom: 30px;
+}
+
+.btn {
+  width: 100%;
+  margin: auto;
+}
+
+.btn input {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 8px 0px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #1871ac;
+  color: white;
+}
+
+.btn input:hover {
+  background-color: #145e8f;
+}
+
+.register,
+.login {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.register a:link,
+.login a:link {
+}
+
+.register a:visited,
+.login a:visited {
+}
+
+.register a:hover,
+.login a:hover {
+  font-family: "MBold";
+}
+
+.register a:active,
+.login a:active {
+}
