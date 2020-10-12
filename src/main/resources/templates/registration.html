@@ -1,41 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="UA-X-Compatible" content="ie=edge" />
-    <link href="./style.css" rel="stylesheet" />    
+    <link th:rel="stylesheet" th:href="@{/css/style.css}" />    
     <script src="https://kit.fontawesome.com/0dc62f9d82.js" crossorigin="anonymous"></script>
     <title>Register</title>
 </head>
 <body>
     <div class="container">
-        <form action="" method="">
+        <form th:action="@{/registration}" method="POST" th:object="${user}">
             <h1>Create New Account</h1>
-            <div class="success">
+            <div th:if="${param.success}" class="success">
                 <span>You have successfully registered.</span>
             </div>
             <div class="name">
-                <input type="text" placeholder="Full name" autofocus required name="name" id="name" />
+                <input type="text" th:field="*{name}" placeholder="Full name" autofocus="autofocus" required name="name" id="name" />
                 <i class="fas fa-user"></i>
             </div>
             <div class="email">
-                <input type="email" placeholder="Email" required name="email" id="email" />
+                <input type="email" th:field="*{email}" placeholder="Email" required name="email" id="email" />
                 <i class="fas fa-envelope"></i>
             </div>
             <div class="password">
-                <input type="password" placeholder="Password" required name="password" id="password" />
+                <input type="password" th:field="*{password}" placeholder="Password" required name="password" id="password" />
                 <i class="fas fa-lock"></i>
             </div>
             <div class="retypePassword">
-                <input type="password" placeholder="Retype Password" required name="retypePassword" id="retypePassword" />
+                <input type="password" th:field="*{repeatPassword}" placeholder="Retype Password" required name="retypePassword" id="retypePassword" />
                 <i class="fas fa-lock"></i>
             </div>
             <div class="btn">
                 <input type="submit" value="Sign up" />
             </div>
             <div class="login">
-                <span>Already signed up? Login <a href="./index.html">here</a></span>
+                <span>Already signed up? Login <a th:href="@{/login}">here</a></span>
             </div>
         </form>
     </div>

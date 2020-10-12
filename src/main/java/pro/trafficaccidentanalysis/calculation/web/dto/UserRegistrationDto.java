@@ -5,13 +5,15 @@ public class UserRegistrationDto {
 	private String name;
 	private String email;
 	private String password;
+	private String repeatPassword;
 	private boolean enabled;
 
-	public UserRegistrationDto(String name, String email, String password, boolean enabled) {
+	public UserRegistrationDto(String name, String email, String password, String repeatPassword, boolean enabled) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
+		this.repeatPassword = repeatPassword;
 		this.enabled = enabled;
 	}
 
@@ -49,6 +51,14 @@ public class UserRegistrationDto {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public String getRepeatPassword() {
+		return repeatPassword;
+	}
+
+	public void setRepeatPassword(String repeatPassword) {
+		this.repeatPassword = repeatPassword;
 	}
 
 }
