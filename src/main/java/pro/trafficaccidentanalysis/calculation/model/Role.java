@@ -1,6 +1,8 @@
 package pro.trafficaccidentanalysis.calculation.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,7 +33,7 @@ public class Role {
 			name = "users_roles",
 			joinColumns = @JoinColumn(name = "roles_id", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"))
-	private List<User> users;
+	private List<User> users = new ArrayList<>();
 
 	public Role(String name) {
 		super();
@@ -40,6 +42,10 @@ public class Role {
 
 	public Role() {
 		super();
+	}
+	
+	public void addUser(User user) {
+		users.add(user);
 	}
 
 	public Long getId() {
@@ -65,5 +71,18 @@ public class Role {
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
+	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Role role = (Role) o;
+        return Objects.equals(id, role.id);
+    }
+ 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
 }

@@ -1,6 +1,5 @@
 package pro.trafficaccidentanalysis.calculation.service.impl;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import pro.trafficaccidentanalysis.calculation.model.Role;
 import pro.trafficaccidentanalysis.calculation.model.User;
+import pro.trafficaccidentanalysis.calculation.repository.RoleRepository;
 import pro.trafficaccidentanalysis.calculation.repository.UserRepository;
 import pro.trafficaccidentanalysis.calculation.service.UserService;
 import pro.trafficaccidentanalysis.calculation.web.dto.UserRegistrationDto;
@@ -22,19 +22,22 @@ import pro.trafficaccidentanalysis.calculation.web.dto.UserRegistrationDto;
 public class UserServiceImpl implements UserService {
 
 	private UserRepository userRepository;
+	private RoleRepository roleRepository;
 	
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 	@Autowired
-	UserServiceImpl(UserRepository userRepository) {
+	UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository) {
 		this.userRepository = userRepository;
+		this.roleRepository = roleRepository;
 	}
 
 	@Override
 	public User save(UserRegistrationDto registrationDto) {
-		User user = new User(registrationDto.getName(), registrationDto.getEmail(), bCryptPasswordEncoder.encode(registrationDto.getPassword()), true,
-				Arrays.asList(new Role("ROLE_USER")));
+		User user = new User(registrationDto.getName(), registrationDto.getEmail(), bCryptPasswordEncoder.encode(registrationDto.getPassword()), true);
+		Role role = roleRepository.findByName("ROLE_USER");
+		role.addUser(user);
 		return userRepository.save(user);
 	}
 
