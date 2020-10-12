@@ -11,31 +11,34 @@
 <body>
     <div class="container">
         <form th:action="@{/registration}" method="POST" th:object="${user}">
-            <h1>Create New Account</h1>
+            <h1 th:text="#{register}"></h1>
             <div th:if="${param.success}" class="success">
-                <span>You have successfully registered.</span>
+                <span th:text="#{successRegister}"></span>
             </div>
             <div class="name">
-                <input type="text" th:field="*{name}" placeholder="Full name" autofocus="autofocus" required name="name" id="name" />
+                <input type="text" th:field="*{name}" th:attr="placeholder=#{name}" autofocus="autofocus" required name="name" id="name" />
                 <i class="fas fa-user"></i>
             </div>
             <div class="email">
-                <input type="email" th:field="*{email}" placeholder="Email" required name="email" id="email" />
+                <input type="email" th:field="*{email}" th:attr="placeholder=#{email}" required name="email" id="email" />
                 <i class="fas fa-envelope"></i>
             </div>
+            <p th:errors="*{email}" class="passwordError"></p> 
             <div class="password">
-                <input type="password" th:field="*{password}" placeholder="Password" required name="password" id="password" />
+                <input type="password" th:field="*{password}" th:attr="placeholder=#{password}" required name="password" id="password" />
                 <i class="fas fa-lock"></i>
             </div>
-            <div class="retypePassword">
-                <input type="password" th:field="*{repeatPassword}" placeholder="Retype Password" required name="retypePassword" id="retypePassword" />
-                <i class="fas fa-lock"></i>
-            </div>
-            <div class="btn">
-                <input type="submit" value="Sign up" />
+            <div class="repeatPassword">
+                <input type="password" th:field="*{repeatPassword}" th:attr="placeholder=#{repeatPassword}" required name="repeatPassword" id="repeatPassword" />
+                <i class="fas fa-lock"></i>                
+            </div>         
+            <p th:errors="*{repeatPassword}" class="passwordError"></p>   
+            <div class="btnRegister">
+                <input type="submit" th:attr="value=#{sign_up}" />
             </div>
             <div class="login">
-                <span>Already signed up? Login <a th:href="@{/login}">here</a></span>
+                <span th:text="#{loginPrompt}"></span>
+                <a th:href="@{/login}" th:text="#{promptLink}"></a>
             </div>
         </form>
     </div>
