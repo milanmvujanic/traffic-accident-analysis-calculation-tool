@@ -7,18 +7,19 @@
 <script src="https://kit.fontawesome.com/0dc62f9d82.js"
 	crossorigin="anonymous"></script>
 <script type="text/javascript" th:src="@{/js/script.js}"></script>
-<link th:href="@{/css/style.css}" th:rel="stylesheet" />
+<link th:href="@{/css/headerAndFooter.css}" th:rel="stylesheet" />
+<link th:href="@{/css/loginAndRegister.css}" th:rel="stylesheet" />
 <title>Home page</title>
 </head>
 <body>
-	<h2 th:text="#{newContent}"></h2>
-	<br />
-	<p>
-		<a th:href="@{/logout}" th:text="#{logout}"></a>
-	</p>
-	<button type="button"
-			onclick="changeLocale('en')">EN</button>
-		<button type="button" 
-			onclick="changeLocale('sr')">SR</button>	
+<div class="header" th:include="@{fragments/header} :: header (logout = #{logout})"></div>
+	<div class="container">
+		<h2 th:text="#{newContent}"></h2>
+		<br />
+		<p>
+			<a th:href="@{/logout}" th:text="${logout}"></a>
+		</p>
+	</div>
+	<div class="footer" th:include="@{fragments/footer} :: footer"></div>
 </body>
 </html>

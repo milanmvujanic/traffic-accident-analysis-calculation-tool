@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="@{fragments/head} :: loginAndRegisterHeaderFiles (title = #{register})">
+<head
+	th:replace="@{fragments/head} :: loginAndRegisterHeaderFiles (title = #{register})">
 </head>
 <body>
-	<div class="container">
-		<button type="button"
-			onclick="changeLocale('en')">EN</button>
-		<button type="button" 
-			onclick="changeLocale('sr')">SR</button>	
+
+	<div class="header" th:include="@{fragments/header} :: header(logout = '')"></div>
+	<div class="container">		
 		<form th:action="@{/registration}" method="POST" th:object="${user}">
 			<h1 th:text="#{register}"></h1>
 			<div th:if="${param.success}" class="success">
@@ -45,5 +44,6 @@
 			</div>
 		</form>
 	</div>
+	<div class="footer" th:include="@{fragments/footer} :: footer"></div>
 </body>
 </html>

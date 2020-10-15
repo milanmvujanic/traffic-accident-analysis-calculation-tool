@@ -1,0 +1,50 @@
+@import url("browserReset.css");
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+	height: 10vh;
+	background-color: #5084b8;
+}
+
+.header h2 {
+	align-self: center;
+	line-height: 1.1;
+	font-size: 1.3rem;
+	color: #ccebff;
+}
+
+.i18 {
+	align-self: flex-start;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	height: 100%;
+	text-align: right;
+}
+
+.i18Btns {
+	flex: 1;
+}
+
+.i18Btns img {
+	width: 50px;
+	cursor: pointer;
+}
+
+.i18 .logoutLink {
+	justify-self: end;
+}
+
+.footer {
+	display: flex;
+	justify-content: center;
+	padding: 10px 20px;
+	height: 10vh;
+	background-color: #5084b8;
+}
+
+.footer p {
+	align-self: center;
+}
