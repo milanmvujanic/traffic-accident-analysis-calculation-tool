@@ -6,7 +6,7 @@ services:
     volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /root/.docker/config.json:/config.json
-    command: watchtower docker-nginx docker-mysql app --interval 300
+    command: watchtower docker-nginx docker-mysql app --interval 30
     restart: unless-stopped
   docker-nginx:
     container_name: docker-nginx
