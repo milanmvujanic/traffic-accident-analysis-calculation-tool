@@ -24,7 +24,9 @@ services:
    volumes:
    - dbdata:/var/lib/mysql
    restart: always
-  
+volumes:
+ dbdata:
+    
   app:
     restart: always
     build: .
