@@ -24,8 +24,6 @@ services:
    volumes:
    - dbdata:/var/lib/mysql
    restart: always
-volumes:
- dbdata:
     
   app:
     restart: always
@@ -39,3 +37,6 @@ volumes:
     command: mvn clean spring-boot:run
     depends_on:
       - docker-mysql
+      
+volumes:
+ dbdata:
