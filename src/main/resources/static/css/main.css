@@ -1,0 +1,30 @@
+@import url("browserReset.css");
+@import url("headerAndFooter.css");
+
+@font-face {
+	font-family: "MRegular";
+	src: url("/css/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+	font-family: "MBold";
+	src: url("/css/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "MRegular", sans-serif;
+}
+
+.container {
+	background-color: #e0ebeb;
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -28,6 +28,11 @@
 	flex: 1;
 }
 
+button {
+	margin: 0;
+	padding: 0;
+}
+
 .i18Btns img {
 	width: 50px;
 	cursor: pointer;

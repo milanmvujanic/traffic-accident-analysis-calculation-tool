@@ -1,0 +1,39 @@
+version: '3'
+services:
+  docker-nginx:
+   container_name: docker-nginx
+   image: nginx
+   restart: always
+   ports:
+   - 80:80
+   - 443:443
+   volumes:
+   - ./nginx/conf.d:/etc/nginx/conf.d
+   depends_on:
+   - app
+ 
+  docker-mysql:
+   container_name: docker-mysql
+   image: mysql/mysql-server
+   environment:
+    MYSQL_DATABASE: traffic_accident_expertise_calculation_tool
+    MYSQL_ROOT_PASSWORD: Nalim050979
+    MYSQL_ROOT_HOST: '%'
+   ports:
+   - "3306:3306"
+   volumes:
+   - dbdata:/var/lib/mysql
+   restart: always
+  
+  app:
+    restart: always
+    build: .
+    working_dir: .
+    volumes:
+      - .:/app
+      - ~/.m2:/root/.m2
+    expose:
+      - "8080"
+    command: mvn clean spring-boot:run
+    depends_on:
+      - docker-mysql
