@@ -1,43 +1,49 @@
 version: '3'
 services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /root/.docker/config.json:/config.json
+    command: watchtower docker-nginx docker-mysql app --interval 300
+    restart: unless-stopped
   docker-nginx:
-   container_name: docker-nginx
-   image: nginx
-   restart: always
-   ports:
-   - 80:80
-   - 443:443
-   volumes:
-   - ./nginx/conf.d:/etc/nginx/conf.d
-   depends_on:
-   - app
- 
+    container_name: docker-nginx
+    image: nginx
+    restart: always
+    ports:
+    - 80:80
+    - 443:443
+    volumes:
+    - ./nginx/conf.d:/etc/nginx/conf.d
+    depends_on:
+    - app
   docker-mysql:
-   container_name: docker-mysql
-   image: mysql/mysql-server
-   command: --default-authentication-plugin=mysql_native_password --innodb_buffer_pool_size=1024M --innodb_read_io_threads=4 --innodb_flush_log_at_trx_commit=2 --innodb_flush_method=O_DIRECT
-   environment:
-    MYSQL_DATABASE: traffic_accident_expertise_calculation_tool
-    MYSQL_ROOT_PASSWORD: Nalim050979
-    MYSQL_ROOT_HOST: '%'
-   ports:
-   - "3306:3306"
-   volumes:
-   - dbdata:/var/lib/mysql
-   restart: always
-    
+    container_name: docker-mysql
+    image: mysql/mysql-server
+    command: --default-authentication-plugin=mysql_native_password --innodb_buffer_pool_size=1024M --innodb_read_io_threads=4 --innodb_flush_log_at_trx_commit=2 --innodb_flush_method=O_DIRECT
+    environment:
+      MYSQL_DATABASE: traffic_accident_expertise_calculation_tool
+      MYSQL_ROOT_PASSWORD: Nalim050979
+      MYSQL_ROOT_HOST: '%'
+    ports:
+    - 3306:3306
+    volumes:
+    - dbdata:/var/lib/mysql
+    restart: always
   app:
+    image: index.docker.io/milan79/traffic-accident-analysis-calculation-tool:latest
     restart: always
     build: .
     working_dir: /app
     volumes:
-      - .:/app
-      - ~/.m2:/root/.m2
+    - .:/app
+    - ~/.m2:/root/.m2
     expose:
-      - "8080"
+    - '8080'
     command: mvn clean spring-boot:run
     depends_on:
-      - docker-mysql
-      
+    - docker-mysql
 volumes:
- dbdata:
+  dbdata: 
