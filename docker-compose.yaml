@@ -1,12 +1,13 @@
 version: '3'
 services:  
   watchtower:
+    container_name: 'watchtower'
     image: v2tec/watchtower
+    command: --cleanup --label-enable
+    restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/milan79/.docker/config.json:/config.json  
-    command: --interval 30
-    restart: unless-stopped
+      - /home/milan79/.docker/config.json:/config.json   
   docker-nginx:
     container_name: docker-nginx
     image: nginx
@@ -44,5 +45,7 @@ services:
     command: mvn clean spring-boot:run
     depends_on:
     - docker-mysql
+    labels:
+      - com.centurylinklabs.watchtower.enable=true
 volumes:
   dbdata: 
