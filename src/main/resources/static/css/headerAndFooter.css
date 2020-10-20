@@ -5,8 +5,10 @@
 	justify-content: space-between;
 	padding: 10px 20px;
 	height: 10vh;
-	background-color: #ff0080;
+	background-color: #400080;
 }
+
+/* background-color: #5084b8; */
 
 .header h2 {
 	align-self: center;
