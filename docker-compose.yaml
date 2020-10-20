@@ -27,14 +27,14 @@ services:
   app:
     image: index.docker.io/milan79/traffic-accident-analysis-calculation-tool:latest
     restart: always
-    build: .
+#    build: .
     working_dir: /app
     volumes:
     - .:/app
     - ~/.m2:/root/.m2
     expose:
     - '8080'
-    command: mvn clean spring-boot:run
+#    command: mvn clean spring-boot:run
     depends_on:
     - docker-mysql
 volumes:
