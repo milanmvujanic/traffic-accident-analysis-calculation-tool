@@ -37,11 +37,9 @@ public class User {
 	@Column(name = "enabled")
 	private boolean enabled;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-	@JoinTable(
-			name = "users_roles",
-			joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"),
-			inverseJoinColumns = @JoinColumn(name = "roles_id", referencedColumnName = "id"))
+	@ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+			CascadeType.REFRESH })
+	@JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "users_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "roles_id", referencedColumnName = "id"))
 	private List<Role> roles = new ArrayList<>();
 
 	public User(String name, String email, String password, boolean enabled) {
@@ -55,7 +53,7 @@ public class User {
 	public User() {
 		super();
 	}
-	
+
 	public void addRoles(List<Role> roles) {
 		this.roles = roles;
 		for (Role role : roles) {
@@ -110,18 +108,20 @@ public class User {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
-	
+
 	@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
-    }
- 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (o == null || getClass() != o.getClass())
+			return false;
+		User user = (User) o;
+		return Objects.equals(id, user.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
 
 }

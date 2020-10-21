@@ -28,3 +28,24 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+.i18 .logoutLink {
+	justify-self: end;
+}
+
+.logoutLink ul {
+	list-style-type: none;
+}
+
+.logoutLink ul li {
+	display: none;
+}
+
+ul:hover li{
+	display: block;
+}
+
+.logoutLink ul li a {
+	text-decoration: none;
+	color: #ccebff;
+}

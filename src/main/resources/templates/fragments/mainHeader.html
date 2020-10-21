@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head th:fragment="headerfiles">
 <meta charset="UTF-8" />
 <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
-	<div th:fragment="header (logout)">
+	<div th:fragment="header">
 		<h2 th:utext="#{logoText}"></h2>
 		<div class="i18">
 			<div class="i18Btns">
@@ -19,7 +20,9 @@
 				</button>
 			</div>
 			<div class="logoutLink">
-				<a th:href="@{/logout}" th:text="${logout}"></a>
+				<ul><span sec:authentication="name"></span>
+					<li><a th:href="@{/logout}" th:text="#{logout}"></a>
+				</ul>				
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headerfiles">
+<meta charset="UTF-8" />
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+	<div th:fragment="header">
+		<h2 th:utext="#{logoText}"></h2>
+		<div class="i18">
+			<div class="i18Btns">
+				<button type="button" onclick="changeLocale('en')" id="enBtn"
+					th:title="#{english}">
+					<img th:src="@{/img/en_flag.png}" alt="" />
+				</button>
+				<button type="button" onclick="changeLocale('sr')" id="srBtn"
+					th:title="#{serbian}">
+					<img th:src="@{/img/sr_flag.png}" alt="" />
+				</button>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

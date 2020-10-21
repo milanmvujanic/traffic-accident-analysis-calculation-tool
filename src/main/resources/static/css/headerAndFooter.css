@@ -38,10 +38,6 @@ button {
 	cursor: pointer;
 }
 
-.i18 .logoutLink {
-	justify-self: end;
-}
-
 .footer {
 	display: flex;
 	justify-content: center;
