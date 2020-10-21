@@ -46,6 +46,7 @@ services:
     - '8080'
     depends_on:
     - watchtower
-    - docker-mysql    
+    - docker-mysql   
+    command: mvn clean spring-boot:run 
 volumes:
   dbdata: 
