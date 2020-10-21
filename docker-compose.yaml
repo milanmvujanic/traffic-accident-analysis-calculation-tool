@@ -35,6 +35,8 @@ services:
     - '8080'
     depends_on:
     - docker-mysql   
+    tty: true
+    stdin_open: true
     command: mvn clean spring-boot:run 
 volumes:
   dbdata: 
