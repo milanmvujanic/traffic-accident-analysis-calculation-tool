@@ -1,10 +1,11 @@
 version: '3'
 services:
   watchtower:
-    command: --label-enable --cleanup --interval 30
+    container_name: docker-watchtower
     image: containrrr/watchtower
     labels:
-      - "com.centurylinklabs.watchtower.enable=true"
+      - "com.centurylinklabs.watchtower.enable=true"      
+    command: --cleanup --interval 30
     network_mode: none
     restart: always
     volumes:
@@ -46,7 +47,7 @@ services:
     expose:
     - '8080'
     depends_on:
-    - watchtower
+    - docker-watchtower
     - docker-mysql   
     command: mvn clean spring-boot:run 
 volumes:
