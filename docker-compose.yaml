@@ -9,6 +9,7 @@ services:
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - /home/milan79/.docker/config.json:/home/milan79/.docker/config.json:ro
   docker-nginx:
     container_name: docker-nginx
     image: nginx
