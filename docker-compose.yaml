@@ -1,5 +1,15 @@
 version: '3'
 services:
+  watchtower:
+    image: containrrr/watchtower
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"      
+    command: --cleanup --interval 30
+    network_mode: none
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/milan79/.docker/config.json:/config.json
   docker-nginx:
     container_name: docker-nginx
     image: nginx
@@ -26,6 +36,8 @@ services:
     restart: always
   app:
     image: index.docker.io/milan79/traffic-accident-analysis-calculation-tool:latest
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
     restart: always    
     working_dir: /app
     volumes:
@@ -34,9 +46,8 @@ services:
     expose:
     - '8080'
     depends_on:
+    - watchtower
     - docker-mysql   
-    tty: true
-    stdin_open: true
     command: mvn clean spring-boot:run 
 volumes:
   dbdata: 
