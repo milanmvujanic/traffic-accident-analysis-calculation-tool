@@ -20,9 +20,16 @@
 				</button>
 			</div>
 			<div class="logoutLink">
-				<ul><span sec:authentication="name"></span>
-					<li><a th:href="@{/logout}" th:text="#{logout}"></a>
-				</ul>				
+				<ul>
+					<li><i class="fas fa-user fa-sm"></i> <i
+						class="fas fa-caret-down fa-sm"></i></li>
+					<li>
+						<ul>
+							<li><span sec:authentication="name"></span></li>
+							<li><a th:href="@{/logout}" th:text="#{logout}"></a>
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

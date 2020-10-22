@@ -3,7 +3,7 @@
 .header {
 	display: flex;
 	justify-content: space-between;
-	padding: 10px 20px;
+	padding: 0px 20px;
 	height: 10vh;
 	background-color: #5084b8;
 }
@@ -13,6 +13,7 @@
 	line-height: 1.1;
 	font-size: 1.3rem;
 	color: #ccebff;
+	padding: 10px 0;
 }
 
 .i18 {
@@ -26,6 +27,7 @@
 
 .i18Btns {
 	flex: 1;
+	padding: 10px 0 0 0;
 }
 
 button {
@@ -34,7 +36,7 @@ button {
 }
 
 .i18Btns img {
-	width: 50px;
+	width: 30px;
 	cursor: pointer;
 }
 
@@ -44,6 +46,7 @@ button {
 	padding: 10px 20px;
 	height: 10vh;
 	background-color: #5084b8;
+	color: #ccebff;
 }
 
 .footer p {

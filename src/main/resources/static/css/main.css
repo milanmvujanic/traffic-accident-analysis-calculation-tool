@@ -1,4 +1,5 @@
 @import url("browserReset.css");
+
 @import url("headerAndFooter.css");
 
 @font-face {
@@ -31,21 +32,101 @@ body {
 
 .i18 .logoutLink {
 	justify-self: end;
+	color: #ccebff;
+}
+
+.logoutLink ul .fa-user {
+	border: 2px solid #ccebff;
+	border-radius: 50%;
+	padding: 0.5rem;
+	margin-bottom: 10px;
 }
 
 .logoutLink ul {
 	list-style-type: none;
 }
 
-.logoutLink ul li {
+.logoutLink ul li:nth-child(1) {
+	position: relative;
+}
+
+.logoutLink ul li ul {
+	position: absolute;
+	right: 20px;
+	z-index: 1;
+}
+
+.logoutLink ul li li {
 	display: none;
 }
 
-ul:hover li{
+.logoutLink ul:hover li ul li {
 	display: block;
+	padding: 20px 30px;
+	background-color: #5084b8;
+	text-align: center;
+	animation: fadeIn ease 0.5s;
+	-webkit-animation: fadeIn ease 0.5s;
+	-moz-animation: fadeIn ease 0.5s;
+	-o-animation: fadeIn ease 0.5s;
+	-ms-animation: fadeIn ease 0.5s;
+}
+
+.logoutLink ul li ul li:hover {
+	background-color: #386189;
+}
+
+.logoutLink ul li ul li:nth-child(1) {
+	border-bottom: 1px solid #7da4ca;
 }
 
 .logoutLink ul li a {
+	display: block;
 	text-decoration: none;
 	color: #ccebff;
+}
+
+@keyframes fadeIn { 
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadeIn { 
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadeIn { 
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-o-keyframes fadeIn { 
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-ms-keyframes fadeIn { 
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
