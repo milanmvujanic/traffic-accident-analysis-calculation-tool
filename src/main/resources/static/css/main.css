@@ -80,6 +80,11 @@ body {
 	border-bottom: 1px solid #7da4ca;
 }
 
+.logoutLink ul li span {
+	font-size: 0.85rem;
+	font-style: italic;
+}
+
 .logoutLink ul li a {
 	display: block;
 	text-decoration: none;
