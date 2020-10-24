@@ -190,7 +190,7 @@ form h1 {
 	font-family: "MBold";
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
 	.container {
 		height: 80vh;
 	}
