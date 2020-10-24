@@ -30,6 +30,14 @@ body {
 	align-items: center;
 }
 
+.header h2 a {
+	text-decoration: none;
+}
+
+.header h2 a:visited {
+	color: var(--header-footer-text-color);
+}
+
 .i18 .logoutLink {
 	justify-self: end;
 	color: #ccebff;

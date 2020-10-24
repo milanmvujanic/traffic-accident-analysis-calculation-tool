@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div th:fragment="header">
-		<h2 th:utext="#{logoText}"></h2>
+		<h2><a th:href="@{/}" th:utext="#{logoText}"></a></h2>
 		<div class="i18">
 			<div class="i18Btns">
 				<button type="button" onclick="changeLocale('en')" id="enBtn"

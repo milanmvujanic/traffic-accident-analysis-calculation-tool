@@ -1,18 +1,23 @@
 @import url("browserReset.css");
 
+:root {
+	--header-footer-background-color: #5084b8;
+	--header-footer-text-color: #ccebff;
+}
+
 .header {
 	display: flex;
 	justify-content: space-between;
 	padding: 0px 20px;
-	height: 10vh;
-	background-color: #5084b8;
+	min-height: 10vh;
+	background-color: var(--header-footer-background-color);
 }
 
 .header h2 {
 	align-self: center;
 	line-height: 1.1;
-	font-size: 1.3rem;
-	color: #ccebff;
+	font-size: 1rem;
+	color: var(--header-footer-text-color);
 	padding: 10px 0;
 }
 
@@ -44,11 +49,25 @@ button {
 	display: flex;
 	justify-content: center;
 	padding: 10px 20px;
-	height: 10vh;
-	background-color: #5084b8;
-	color: #ccebff;
+	min-height: 10vh;
+	background-color: var(--header-footer-background-color);
+	color: var(--header-footer-text-color);
 }
 
 .footer p {
 	align-self: center;
+}
+
+@media screen and (min-width: 600px) {
+	.header {
+		height: 10vh;
+	}
+	
+	.header h2 {
+		font-size: 1.3rem;
+	}
+	
+	.footer {
+		height: 10vh;
+	}
 }
