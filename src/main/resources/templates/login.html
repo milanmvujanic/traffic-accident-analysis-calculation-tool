@@ -4,8 +4,8 @@
 	th:replace="@{fragments/loginAndRegisterHeadTag} :: loginAndRegisterHeaderFiles (title = #{login})">
 </head>
 <body>
-
-	<div class="header" th:include="@{fragments/loginAndRegisterHeader} :: header"></div>
+	<div class="header"
+		th:include="@{fragments/loginAndRegisterHeader} :: header"></div>	
 	<div class="container">
 		<form th:action="@{/login}" th:method="POST">
 			<h1 th:text="#{login}"></h1>
@@ -32,6 +32,6 @@
 			</div>
 		</form>
 	</div>
-	<div class="footer" th:include="@{fragments/footer} :: footer"></div>
+	<div class="footer" th:include="@{fragments/footer} :: footer"></div>	
 </body>
 </html>

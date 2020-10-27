@@ -6,15 +6,32 @@
 </head>
 <body>
 	<div th:fragment="header">
-		<h2 th:utext="#{logoText}"></h2>
+		<h2>
+			<span th:text="#{logoText}"></span>
+		</h2>
+		<div class="i18-mobile">
+			<span id="closedMenu" class="hamburger"><i
+				class="fas fa-bars fa-lg"></i></span> <span id="openedMenu"
+				class="hamburger"><i class="fas fa-times fa-lg"></i></span>
+			<ul id="menuContent">
+				<li class="menuContent hideMenu">
+					<div class="i18Btns">
+						<button type="button" class="enBtn" th:title="#{english}">
+							<img th:src="@{/img/en_flag.png}" alt="" />
+						</button>
+						<button type="button" class="srBtn" th:title="#{serbian}">
+							<img th:src="@{/img/sr_flag.png}" alt="" />
+						</button>
+					</div>
+				</li>
+			</ul>
+		</div>
 		<div class="i18">
 			<div class="i18Btns">
-				<button type="button" onclick="changeLocale('en')" id="enBtn"
-					th:title="#{english}">
+				<button type="button" class="enBtn" th:title="#{english}">
 					<img th:src="@{/img/en_flag.png}" alt="" />
 				</button>
-				<button type="button" onclick="changeLocale('sr')" id="srBtn"
-					th:title="#{serbian}">
+				<button type="button" class="srBtn" th:title="#{serbian}">
 					<img th:src="@{/img/sr_flag.png}" alt="" />
 				</button>
 			</div>
