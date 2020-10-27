@@ -26,18 +26,6 @@
 	align-self: center;
 }
 
-.header h2 a {
-	align-self: center;
-}
-
-#hamburgerMenu {
-	list-style-type: none;
-}
-
-.userEmail span {
-	color: var(--header-footer-text-color);
-}
-
 #closedMenu {
 	padding: 0px 20px;
 	float: right;
@@ -57,7 +45,7 @@
 	color: var(--header-footer-text-color);
 }
 
-#menuContent {
+.menuContent {
 	list-style-type: none;
 }
 
@@ -129,19 +117,6 @@
 	padding: 10px 20px;
 }
 
-#hamburgerMenu .menuContent .logoutLink a {
-	text-decoration: none;
-	color: var(--header-footer-text-color);
-}
-
-.menuContent .userEmail {
-	padding: 10px 20px;
-}
-
-.menuContent .logoutLink {
-	padding: 10px 20px;
-}
-
 button {
 	margin: 0;
 	padding: 0;
@@ -168,6 +143,37 @@ button {
 .footer p {
 	align-self: center;
 }
+/* 
+	Main header specific CSS rules
+*/
+ .header h2 a {
+	align-self: center;
+	text-decoration: none;
+}
+
+.header h2 a:visited {
+	color: var(--header-footer-text-color);
+}
+
+.menuContent .userEmail span {
+	color: var(--header-footer-text-color);
+}
+
+.menuContent .logoutLink a {
+	text-decoration: none;
+	color: var(--header-footer-text-color);
+}
+
+.menuContent .userEmail {
+	padding: 10px 20px;
+}
+
+.menuContent .logoutLink {
+	padding: 10px 20px;
+}
+/* 
+	End of main header specific CSS rules
+*/
 
 @media screen and (min-width: 768px) {
 		
@@ -178,7 +184,6 @@ button {
 	}
 	
 	.header h2 {
-		display: block;
 		align-self: center;
 		font-size: 1.3rem;
 		line-height: 1.5rem;
@@ -202,7 +207,72 @@ button {
 		text-align: right;
 	}
 	
-	.i18Btns {
-		padding-top: 10px;
-	}	
+/*
+	Main header specific CSS rules
+*/
+	.i18 .logoutLink {
+		justify-self: end;
+		color: #ccebff;
+		padding-right: 20px;
+	}
+	
+	.i18 .logoutLink ul .fa-user {
+		border: 2px solid #ccebff;
+		border-radius: 50%;
+		padding: 0.5rem;
+		margin-bottom: 10px;
+	}
+	
+	.i18 .logoutLink ul {
+		list-style-type: none;
+	}
+	
+	.i18 .logoutLink ul li:nth-child(1) {
+		position: relative;
+	}
+	
+	.i18 .logoutLink ul li ul {
+		position: absolute;
+		right: 0;
+		z-index: 1;
+	}
+	
+	.i18 .logoutLink ul li li {
+		display: none;
+	}
+	
+	.i18 .logoutLink ul:hover li ul li {
+		display: block;
+		padding: 20px 30px;
+		background-color: #5084b8;
+		text-align: center;
+		animation: fadeIn ease 0.5s;
+		-webkit-animation: fadeIn ease 0.5s;
+		-moz-animation: fadeIn ease 0.5s;
+		-o-animation: fadeIn ease 0.5s;
+		-ms-animation: fadeIn ease 0.5s;
+	}
+	
+	.i18 .logoutLink ul li ul li:hover {
+		background-color: #386189;
+	}
+	
+	.i18 .logoutLink ul li ul li:nth-child(1) {
+		border-bottom: 1px solid #7da4ca;
+	}
+	
+	.i18 .logoutLink ul li span {
+		font-size: 0.85rem;
+		font-style: italic;
+	}
+	
+	.i18 .logoutLink ul li a {
+		display: block;
+		text-decoration: none;
+		color: #ccebff;
+	}
+/*
+	End of main header specific CSS rules
+*/
+			
 }

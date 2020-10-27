@@ -11,34 +11,34 @@
 			<a th:href="@{/}" th:text="#{logoText}"></a>
 		</h2>
 		<div class="i18-mobile">
-			<ul id="hamburgerMenu">
-				<li id="closedMenu" class="hamburger"><i
-					class="fas fa-bars fa-lg"></i></li>
-				<li id="openedMenu" class="hamburger"><i
-					class="fas fa-times fa-lg"></i></li>
+			<span id="closedMenu" class="hamburger"><i
+				class="fas fa-bars fa-lg"></i></span> <span id="openedMenu"
+				class="hamburger"><i class="fas fa-times fa-lg"></i></span>
+			<ul class="menuContent hideMenu">
 				<li>
-					<ul>
-						<li class="menuContent hideMenu">
-							<div class="userEmail">
-								<span sec:authentication="name"></span>
-							</div>							
-							<div class="i18Btns">
-								<button type="button" onclick="changeLocale('en')" id="enBtn"
-									th:title="#{english}">
-									<img th:src="@{/img/en_flag.png}" alt="" />
-								</button>
-								<button type="button" onclick="changeLocale('sr')" id="srBtn"
-									th:title="#{serbian}">
-									<img th:src="@{/img/sr_flag.png}" alt="" />
-								</button>
-							</div>
-							<div class="logoutLink">
-								<a th:href="@{/logout}" th:text="#{logout}"></a>
-							</div>
-						</li>
-					</ul>
+					<div class="userEmail">
+						<span sec:authentication="name"></span>
+					</div>
+				</li>
+				<li>
+					<div class="i18Btns">
+						<button type="button" onclick="changeLocale('en')" id="enBtn"
+							th:title="#{english}">
+							<img th:src="@{/img/en_flag.png}" alt="" />
+						</button>
+						<button type="button" onclick="changeLocale('sr')" id="srBtn"
+							th:title="#{serbian}">
+							<img th:src="@{/img/sr_flag.png}" alt="" />
+						</button>
+					</div>
+				</li>
+				<li>
+					<div class="logoutLink">
+						<a th:href="@{/logout}" th:text="#{logout}"></a>
+					</div>
 				</li>
 			</ul>
+
 		</div>
 		<div class="i18">
 			<div class="i18Btns">
