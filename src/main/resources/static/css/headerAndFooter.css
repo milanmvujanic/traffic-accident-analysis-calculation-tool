@@ -3,6 +3,8 @@
 :root {
 	--header-footer-background-color: #5084b8;
 	--header-footer-text-color: #ccebff;
+	--header-dropdown-menu-li-hover: #386189;
+	--header-dropdown-menu-li-border: #7da4ca;
 }
 
 .header {
@@ -217,7 +219,7 @@ button {
 	}
 	
 	.i18 .logoutLink ul .fa-user {
-		border: 2px solid #ccebff;
+		border: 2px solid var(--header-footer-text-color);
 		border-radius: 50%;
 		padding: 0.5rem;
 		margin-bottom: 10px;
@@ -244,7 +246,7 @@ button {
 	.i18 .logoutLink ul:hover li ul li {
 		display: block;
 		padding: 20px 30px;
-		background-color: #5084b8;
+		background-color: var(--header-footer-background-color);
 		text-align: center;
 		animation: fadeIn ease 0.5s;
 		-webkit-animation: fadeIn ease 0.5s;
@@ -254,11 +256,11 @@ button {
 	}
 	
 	.i18 .logoutLink ul li ul li:hover {
-		background-color: #386189;
+		background-color: var(--header-dropdown-menu-li-hover);
 	}
 	
 	.i18 .logoutLink ul li ul li:nth-child(1) {
-		border-bottom: 1px solid #7da4ca;
+		border-bottom: 1px solid var(--header-dropdown-menu-li-border);
 	}
 	
 	.i18 .logoutLink ul li span {
@@ -269,7 +271,7 @@ button {
 	.i18 .logoutLink ul li a {
 		display: block;
 		text-decoration: none;
-		color: #ccebff;
+		color: var(--header-footer-text-color);
 	}
 /*
 	End of main header specific CSS rules
