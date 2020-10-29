@@ -2,7 +2,7 @@ version: '3'
 services:  
   docker-nginx:
     container_name: docker-nginx
-    image: nginx
+    image: nginx:alpine
     restart: always
     ports:
     - 80:80
