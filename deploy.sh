@@ -1,4 +1,4 @@
 #! /bin/bash
 
 git pull origin master
-docker-compose up
+docker-compose up -d
