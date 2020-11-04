@@ -177,7 +177,7 @@ form h1 {
 }
 
 .btnLogin input:hover, btnRegister input:hover {
-	background-color: var(button-hover-background-color);
+	background-color: var(--button-hover-background-color);
 }
 
 .register, .login {

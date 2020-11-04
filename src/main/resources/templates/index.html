@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
-<head 
+<head
 	th:replace="@{/fragments/mainHeadTag} :: mainHeaderFiles (title = #{homePage})">
 </head>
 <body>
-<div class="header" th:include="@{fragments/mainHeader} :: header"></div>
+	<div class="header" th:include="@{fragments/mainHeader} :: header"></div>
 	<div class="container">
-		<h2 th:text="#{newContent}"></h2>
-		<br />
+		<form th:action="@{/calculate/stoppingDistance}" th:method="POST"
+			th:object="${calculation}">
+			<div class="input speed">
+				<label for="speed" th:text="#{speed}"></label> <input type="text"
+					id="speed" th:field="*{speed}" th:attr="placeholder=#{speedPrompt}" autofocus
+					required="required" />
+			</div>
+			<div class="input deceleration">
+				<label for="deceleration" th:text="#{deceleration}"></label> <input
+					type="text" id="deceleration" th:field="*{deceleration}" th:attr="placeholder=#{decelerationPrompt}"
+					required="required" />
+			</div>
+			<div class="input btnCalculate">
+				<input type="submit" th:attr="value=#{calculate}" />
+			</div>
+			<div class="result" th:if="*{stoppingDistance} &gt; 0"> 
+				<textarea rows="" cols="" th:text="*{stoppingDistance}">				
+			</textarea>
+				<div class="export">
+					<a th:href="@{'/calculate/exportToWord?result=' + ${calculation.stoppingDistance}}"> <img
+						th:src="@{/img/word_icon.jpg}" alt=""
+						th:attr="title=#{exportToWord}" />
+					</a>
+				</div>
+			</div>
+		</form>
 	</div>
 	<div class="footer" th:include="@{fragments/footer} :: footer"></div>
 </body>
