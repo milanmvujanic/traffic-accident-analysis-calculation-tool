@@ -1,3 +1,1 @@
-FROM adoptopenjdk:8-jre-hotspot    
-WORKDIR /app
-COPY target/traffic-accident-analysis-calculation-tool.jar .
+FROM maven:3.6.3-adoptopenjdk-8
