@@ -9,18 +9,11 @@ pipeline {
     }
     agent any
     stages {
-        stage ('Checkout SCM') {
-            steps {
-                checkout([
-                    $class='GitSCM',
-                    branches:[[name : 'master']],
-                    userRemoteConfigs:[[
-                        url: 'https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool.git',
-                        credentialsId: githubCredentialId,
-                    ]]
-                ])
-            }
-        }
+        stage('Cloning Git') {
+		      steps {
+		        git 'https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool.git'
+		      }
+   	 	}
         stage ('Build jar') {
         	steps {
         		sh "mvn clean install"        		
