@@ -14,11 +14,6 @@ pipeline {
 		        git 'https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool.git'
 		      }
    	 	}
-        stage ('Build jar') {
-        	steps {
-        		sh "mvn clean install"        		
-        	}
-        }
         stage ('Building image') {
             steps {
                 script {
