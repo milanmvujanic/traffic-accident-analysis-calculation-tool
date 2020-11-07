@@ -29,7 +29,7 @@ pipeline {
         stage ('Deploy image') {
             steps {
                 script {
-                    docker.withRegistry('https://' + registry, dockerhubCredentialId) {
+                    docker.withRegistry('', dockerhubCredentialId) {
                         dockerImage.push()
                     }
                 }
