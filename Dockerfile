@@ -5,5 +5,6 @@ RUN mvn -f /app/pom.xml clean install
 
 FROM adoptopenjdk:8-jre-hotspot  
 COPY --from=build /app/target/traffic-accident-analysis-calculation-tool.jar /app/traffic-accident-analysis-calculation-tool.jar
+WORKDIR /app
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app/traffic-accident-analysis-calculation-tool.jar"]
+ENTRYPOINT ["java","-jar","traffic-accident-analysis-calculation-tool.jar"]
