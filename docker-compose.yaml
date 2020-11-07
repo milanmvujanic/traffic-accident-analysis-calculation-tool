@@ -26,17 +26,13 @@ services:
     restart: always
   app:
     image: milan79/traffic-accident-analysis-calculation-tool:latest
-    logging:
-        driver: "json-file"
-        options:
-            max-file: 5
-            max-size: 10m
     restart: always
     volumes:
     - .:/app
     - ~/.m2:/root/.m2
     expose:
     - '8080'
+    command: --log-opt max-size=10m --log-opt max-file=5
     depends_on:
     - docker-mysql 
 volumes:
