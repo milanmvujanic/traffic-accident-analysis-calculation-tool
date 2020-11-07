@@ -26,6 +26,7 @@ services:
     restart: always
   app:
     image: milan79/traffic-accident-analysis-calculation-tool:latest
+    working_dir: /app
     restart: always
     volumes:
     - .:/app
