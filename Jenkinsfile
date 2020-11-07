@@ -7,7 +7,7 @@ pipeline {
         dockerImage = ''
         githubCredentialId = 'github_id'
     }
-    agent any
+    agent any { dockerfile:true }
     stages {
         stage('Cloning Git') {
 		      steps {
