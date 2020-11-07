@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 pipeline {
     environment {
-        registry = 'https://milan79/traffic-accident-analysis-calculation-tool'
+        registry = 'milan79/traffic-accident-analysis-calculation-tool'
         dockerhubCredentialId = 'dockerhub_id'
         dockerImage = ''
         githubCredentialId = 'github_id'
@@ -29,7 +29,7 @@ pipeline {
         stage ('Deploy image') {
             steps {
                 script {
-                    docker.withRegistry(registry, dockerhubCredentialId) {
+                    docker.withRegistry('https://' + registry, dockerhubCredentialId) {
                         dockerImage.push()
                     }
                 }
