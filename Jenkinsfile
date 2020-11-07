@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 pipeline {
     environment {
-        registry = 'milan79/traffic-accident-analysis-calculation-tool'
+        registry = 'https://milan79/traffic-accident-analysis-calculation-tool'
         dockerhubCredentialId = 'dockerhub_id'
         dockerImage = ''
         githubCredentialId = 'github_id'
