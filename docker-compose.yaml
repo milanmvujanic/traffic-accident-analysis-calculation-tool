@@ -26,6 +26,11 @@ services:
     restart: always
   app:
     image: milan79/traffic-accident-analysis-calculation-tool:latest
+    logging:
+        driver: "json-file"
+        options:
+            max-file: 5
+            max-size: 10m
     restart: always
     volumes:
     - .:/app
