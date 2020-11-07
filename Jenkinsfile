@@ -2,7 +2,7 @@ properties([pipelineTriggers([githubPush()])])
 
 pipeline {
     environment {
-        registry = milan79/traffic-accident-analysis-calculation-tool
+        registry = 'milan79/traffic-accident-analysis-calculation-tool'
         dockerhubCredentialId = 'dockerhub_id'
         dockerImage = ''
         githubCredentialId = 'github_id'
@@ -36,7 +36,9 @@ pipeline {
             }
         }
         stage ('Remove unused docker image') {
-            sh "docker rmi $registry:latest"
+            steps {
+            	sh "docker rmi $registry:latest"
+            }
         }
     }
     
