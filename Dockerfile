@@ -1,1 +1,4 @@
-FROM maven:3.6.3-adoptopenjdk-8
+FROM adoptopenjdk:8-jre-hotspot    
+WORKDIR /app
+COPY target/traffic-accident-analysis-calculation-tool.jar .
+ENTRYPOINT ["java","-jar","traffic-accident-analysis-calculation-tool.jar"]

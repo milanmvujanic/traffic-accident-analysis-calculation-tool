@@ -25,16 +25,14 @@ services:
     - dbdata:/var/lib/mysql
     restart: always
   app:
-    build: .
-    restart: always    
-    working_dir: /app
+    image: milan79/traffic-accident-analysis-calculation-tool
+    restart: always
     volumes:
     - .:/app
     - ~/.m2:/root/.m2
     expose:
     - '8080'
     depends_on:
-    - docker-mysql   
-    command: mvn clean spring-boot:run 
+    - docker-mysql 
 volumes:
   dbdata: 
