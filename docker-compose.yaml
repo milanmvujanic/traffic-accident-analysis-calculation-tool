@@ -28,12 +28,13 @@ services:
     build: .
     restart: always
     volumes:
+    - .:/app
     - ~/.m2:/root/.m2
     expose:
     - '8080'
     depends_on:
     - docker-mysql
     command:
-    - mvn clean install
+    - mvn spring-boot:run
 volumes:
   dbdata: 
