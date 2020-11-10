@@ -25,7 +25,7 @@ services:
     - dbdata:/var/lib/mysql
     restart: always
   app:
-    image: milan79/traffic-accident-analysis-calculation-tool:latest
+    build: .
     working_dir: /app
     restart: always
     volumes:
