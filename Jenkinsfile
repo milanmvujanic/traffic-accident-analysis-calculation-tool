@@ -18,7 +18,17 @@ pipeline {
    	 		steps {
    	 			sh 'mvn clean package'
    	 		}
-   	 	}        
+   	 	} 
+   	 	stage ('Copying jar') {
+   	 		steps {
+   	 			fileOperations([fileCopyOperation(
+				  excludes: '',
+				  flattenFiles: false,
+				  includes: '/var/lib/jenkins/workspace/traffic-accident-analysis-calculation-tool/target/**',
+				  targetLocation: "./target"
+				)])
+   	 		}
+   	 	}       
     }
     
 }
