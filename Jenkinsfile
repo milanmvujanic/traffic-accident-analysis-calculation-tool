@@ -21,7 +21,7 @@ pipeline {
    	 	} 
    	 	stage ('Copying jar') {
    	 		steps {
-   	 			sh 'chmod +x ./copy.sh'
+   	 			sh 'chmod +x ./scripts/copy.sh'
 				sh './copy.sh'
    	 		}   	 		
    	 	}       
