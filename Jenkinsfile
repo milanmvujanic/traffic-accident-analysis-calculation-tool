@@ -18,28 +18,7 @@ pipeline {
    	 		steps {
    	 			sh 'mvn clean package'
    	 		}
-   	 	}
-        stage ('Building image') {
-            steps {
-                script {
-                    dockerImage = docker.build registry + ":latest"
-                }
-            }
-        }
-        stage ('Deploy image') {
-            steps {
-                script {
-                    docker.withRegistry('', dockerhubCredentialId) {
-                        dockerImage.push()
-                    }
-                }
-            }
-        }
-        stage ('Remove unused docker image') {
-            steps {
-            	sh "docker rmi $registry:latest"
-            }
-        }
+   	 	}        
     }
     
 }
