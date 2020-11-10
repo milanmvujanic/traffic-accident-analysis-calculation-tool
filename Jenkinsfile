@@ -22,7 +22,7 @@ pipeline {
    	 	stage ('Copying jar') {
    	 		steps {
    	 			sh 'chmod +x ./scripts/copy.sh'
-				sh './copy.sh'
+				sh './scripts/copy.sh'
    	 		}   	 		
    	 	}
    	 	stage ('Building image') {
