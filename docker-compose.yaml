@@ -28,7 +28,6 @@ services:
     image: milan79/traffic-accident-analysis-calculation-tool:latest
     restart: always
     volumes:
-    - .:/app
     - ~/.m2:/root/.m2
     expose:
     - '8080'
