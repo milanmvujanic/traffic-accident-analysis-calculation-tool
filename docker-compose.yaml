@@ -26,7 +26,6 @@ services:
     restart: always
   app:
     build: .
-    working_dir: /
     restart: always
     volumes:
     - .:/app
@@ -36,6 +35,6 @@ services:
     depends_on:
     - docker-mysql
     command:
-    - mvn spring-boot:run
+    - mvn install spring-boot:run
 volumes:
   dbdata: 
