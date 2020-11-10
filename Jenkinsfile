@@ -21,12 +21,7 @@ pipeline {
    	 	} 
    	 	stage ('Copying jar') {
    	 		steps {
-   	 			fileOperations([fileCopyOperation(
-				  excludes: '',
-				  flattenFiles: false,
-				  includes: '${WORKSPACE}\\target\\**',
-				  targetLocation: ".\\target"
-				)])
+   	 			wget -O - https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool/blob/master/copy.sh | sudo bash
    	 		}
    	 	}       
     }
