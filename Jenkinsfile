@@ -21,8 +21,7 @@ pipeline {
    	 	} 
    	 	stage ('Copying jar') {
    	 		steps {
-   	 			wget -O - https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool/blob/master/copy.sh | sudo bash
-   	 		}
+   	 			wget -O - https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool/blob/master/copy.sh | sudo bash 
    	 	}       
     }
     
