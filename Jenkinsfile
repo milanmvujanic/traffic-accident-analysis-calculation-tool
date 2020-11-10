@@ -24,8 +24,8 @@ pipeline {
    	 			fileOperations([fileCopyOperation(
 				  excludes: '',
 				  flattenFiles: false,
-				  includes: '/var/lib/jenkins/workspace/traffic-accident-analysis-calculation-tool/target/**',
-				  targetLocation: "./target"
+				  includes: '..\\..\\..\\..\\var\\lib\\jenkins\\workspace\\traffic-accident-analysis-calculation-tool\\target\\**',
+				  targetLocation: ".\\target"
 				)])
    	 		}
    	 	}       
