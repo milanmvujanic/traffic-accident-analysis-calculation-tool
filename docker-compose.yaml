@@ -26,7 +26,7 @@ services:
     restart: always
   app:
     build: .
-    working_dir: .
+    working_dir: /
     restart: always
     volumes:
     - .:/app
