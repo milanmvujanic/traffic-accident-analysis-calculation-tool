@@ -20,7 +20,11 @@ pipeline {
    	 		}
    	 	} 
    	 	stage ('Copying jar') {
-   	 		steps {wget -O - https://github.com/milanmvujanic/traffic-accident-analysis-calculation-tool/blob/master/copy.sh | sudo bash}
+   	 		bash '''#!/bin/bash
+                 src="/var/lib/jenkins/workspace/traffic-accident-analysis-calculation-tool/target/gonzo.jar"
+				 dest="/home/milan/projects/traffic-accident-analysis-calculation-tool/target/gonzo.jar"
+				 cp -rf  "$src" "$dest" 
+         	'''
    	 	}       
     }
     
