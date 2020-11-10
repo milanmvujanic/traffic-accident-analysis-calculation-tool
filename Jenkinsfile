@@ -21,11 +21,8 @@ pipeline {
    	 	} 
    	 	stage ('Copying jar') {
    	 		steps {
-   	 			sh '''#!/bin/bash
-                 src="/var/lib/jenkins/workspace/traffic-accident-analysis-calculation-tool/target/gonzo.jar"
-				 dest="/home/milan/projects/traffic-accident-analysis-calculation-tool/target"
-				 cp -rf "$src" "$dest" 
-         	'''
+   	 			sh 'chmod +x ./copy.sh'
+				sh './copy.sh'
    	 		}   	 		
    	 	}       
     }
