@@ -7,7 +7,7 @@ pipeline {
         dockerImage = ''
         githubCredentialId = 'github_id'
     }
-    agent any
+    agent { dockerfile true }
     stages {
         stage('Cloning Git') {
 		      steps {
@@ -28,7 +28,7 @@ pipeline {
    	 	stage ('Building image') {
             steps {
                 script {
-                    dockerImage = docker.build registry + ":latest"
+                    dockerImage = docker.build registry + ":latest ."
                 }
             }
         }
