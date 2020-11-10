@@ -82,7 +82,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>gonzo</finalName>
+		<finalName>traffic-accident-analysis-calculation-tool</finalName>
 	</build>
 
 </project>

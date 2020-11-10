@@ -1,5 +1,5 @@
 FROM adoptopenjdk:8-jre-hotspot  
 WORKDIR /app
-COPY /target/gonzo.jar gonzo.jar
+COPY /target/traffic-accident-analysis-calculation-tool.jar traffic-accident-analysis-calculation-tool.jar
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","gonzo.jar"]
+ENTRYPOINT ["java","-jar","traffic-accident-analysis-calculation-tool.jar"]
