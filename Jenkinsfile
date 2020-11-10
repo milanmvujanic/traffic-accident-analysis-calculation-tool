@@ -23,8 +23,8 @@ pipeline {
    	 		steps {
    	 			sh '''#!/bin/bash
                  src="/var/lib/jenkins/workspace/traffic-accident-analysis-calculation-tool/target/gonzo.jar"
-				 dest="/home/milan/projects/traffic-accident-analysis-calculation-tool/target/gonzo.jar"
-				 sudo cp -rf  "$src" "$dest" 
+				 dest="/home/milan/projects/traffic-accident-analysis-calculation-tool/target"
+				 cp -rf "$src" "$dest" 
          	'''
    	 		}   	 		
    	 	}       
