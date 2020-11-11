@@ -1,11 +1,13 @@
 package pro.trafficaccidentanalysis.calculation.web.dto.validation;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import pro.trafficaccidentanalysis.calculation.model.User;
 import pro.trafficaccidentanalysis.calculation.web.dto.UserRegistrationDto;
 
+@Component
 public class UserRegistrationDtoValidator implements Validator {
 
 	@Override

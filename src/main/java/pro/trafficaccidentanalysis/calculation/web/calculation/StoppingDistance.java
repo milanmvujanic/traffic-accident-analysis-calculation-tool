@@ -1,27 +1,29 @@
 package pro.trafficaccidentanalysis.calculation.web.calculation;
 
-public class StoppingDistanceData {
+public class StoppingDistance {
 
-	private double speed;
-	private double deceleration;
+	private String speed;
+	private String deceleration;
 	private double stoppingDistance;
+	
+	private boolean stoppingDistanceExists;
 
-	public StoppingDistanceData() {
+	public StoppingDistance() {
 	}
 
-	public double getSpeed() {
+	public String getSpeed() {
 		return speed;
 	}
 
-	public void setSpeed(double speed) {
+	public void setSpeed(String speed) {
 		this.speed = speed;
 	}
 
-	public double getDeceleration() {
+	public String getDeceleration() {
 		return deceleration;
 	}
 
-	public void setDeceleration(double deceleration) {
+	public void setDeceleration(String deceleration) {
 		this.deceleration = deceleration;
 	}
 
@@ -35,6 +37,10 @@ public class StoppingDistanceData {
 	
 	public void calculateStoppingDistance() {
 		this.stoppingDistance = Calculation.calculateStoppingDistance(speed, deceleration);
+		stoppingDistanceExists = (stoppingDistance > 0.0) ? true : false;
 	}
-
+	
+	public boolean isStoppingDistanceExists() {
+		return stoppingDistanceExists;
+	}
 }

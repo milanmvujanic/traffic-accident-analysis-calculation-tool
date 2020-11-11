@@ -19,6 +19,8 @@
 	--button-background-color: #1871ac;
 	--button-text-color: #fff;
 	--button-hover-background-color: #145e8f;
+	--input-field-units-color: #9893ae;
+	--error-text-color: rgba(255, 0, 0, 0.753);
 }
 
 * {
@@ -65,9 +67,30 @@ form input {
 	font-size: 0.8rem;
 }
 
+form .input {
+	position: relative;
+}
+
+form .input span {
+	position: absolute;
+	right: 15px;
+	top: 34px;
+	color: var(--input-field-units-color);
+	font-size: 0.8rem;
+}
+
+.error {
+	color: var(--error-text-color);
+	font-size: 0.6rem;
+	font-family: "MBold";
+	line-height: 1;
+	margin-top: 3px;
+}
+
 form .btnCalculate {
 	width: 50%;
-	justify-self: center;	
+	justify-self: center;
+	margin-top: 20px;	
 }
 
 form .btnCalculate input {	
@@ -88,8 +111,8 @@ form input:focus {
 	border-color: var(--input-field-focus-color);
 }
 
-form .speed, form .deceleration {
-	margin-bottom: 20px;
+form .deceleration {
+	margin-top: 20px;
 }
 
 form .result {
@@ -139,6 +162,17 @@ form .result img {
 	form input {
 		padding: 10px;
 		font-size: 1rem;
+	}
+	
+	form .input span {
+		right: 20px;
+		top: 50%;
+		font-size: 1rem;
+	}
+	
+	.error {
+		font-size: 0.8rem;
+		margin-top: 5px;
 	}
 	
 	form .btnCalculate input {

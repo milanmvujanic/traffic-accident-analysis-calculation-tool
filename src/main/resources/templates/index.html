@@ -12,17 +12,19 @@
 			<div class="input speed">
 				<label for="speed" th:text="#{speed}"></label> <input type="text"
 					id="speed" th:field="*{speed}" th:attr="placeholder=#{speedPrompt}" autofocus
-					required="required" />
+					required="required" /> <span th:text="#{kmh}"></span>
 			</div>
+			<p th:errors="*{speed}" class="error"></p>
 			<div class="input deceleration">
 				<label for="deceleration" th:text="#{deceleration}"></label> <input
 					type="text" id="deceleration" th:field="*{deceleration}" th:attr="placeholder=#{decelerationPrompt}"
-					required="required" />
+					required="required" /> <span th:text="#{ms2}"></span>
 			</div>
+			<p th:errors="*{deceleration}" class="error"></p>
 			<div class="input btnCalculate">
 				<input type="submit" th:attr="value=#{calculate}" />
 			</div>
-			<div class="result" th:if="*{stoppingDistance} &gt; 0"> 
+			<div class="result" th:if="*{stoppingDistanceExists}"> 
 				<textarea rows="" cols="" th:text="*{stoppingDistance}">				
 			</textarea>
 				<div class="export">

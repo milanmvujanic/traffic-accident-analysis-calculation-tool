@@ -22,7 +22,7 @@
 					th:attr="placeholder=#{email}" required name="email" id="email" />
 				<i class="fas fa-envelope"></i>
 			</div>
-			<p th:errors="*{email}" class="passwordError"></p>
+			<p th:errors="*{email}" class="error"></p>
 			<div class="password">
 				<input type="password" th:field="*{password}"
 					th:attr="placeholder=#{password}" required name="password"
@@ -34,7 +34,7 @@
 					name="repeatPassword" id="repeatPassword" /> <i
 					class="fas fa-lock"></i>
 			</div>
-			<p th:errors="*{repeatPassword}" class="passwordError"></p>
+			<p th:errors="*{repeatPassword}" class="error"></p>
 			<div class="btnRegister">
 				<input type="submit" th:attr="value=#{sign_up}" />
 			</div>

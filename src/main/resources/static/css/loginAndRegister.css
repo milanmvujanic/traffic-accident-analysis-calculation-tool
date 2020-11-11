@@ -68,7 +68,7 @@ form h1 {
 	font-family: "MBold";
 }
 
-.passwordError {
+.error {
 	color: var(--error-text-color);
 	font-size: 0.6rem;
 	font-family: "MBold";
@@ -211,7 +211,7 @@ form h1 {
 		font-size: 0.8rem;
 	}
 	
-	.passwordError {
+	.error {
 		font-size: 0.8rem;
 		margin-top: 5px;
 	}

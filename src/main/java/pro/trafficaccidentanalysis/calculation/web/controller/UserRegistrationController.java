@@ -19,10 +19,12 @@ import pro.trafficaccidentanalysis.calculation.web.dto.validation.UserRegistrati
 public class UserRegistrationController {
 
 	private UserService userService;
+	private UserRegistrationDtoValidator userRegistrationDtoValidator;
 
 	@Autowired
-	public UserRegistrationController(UserService userService) {
+	public UserRegistrationController(UserService userService, UserRegistrationDtoValidator userRegistrationDtoValidator) {
 		this.userService = userService;
+		this.userRegistrationDtoValidator = userRegistrationDtoValidator;
 	}
 
 	@GetMapping
@@ -36,7 +38,7 @@ public class UserRegistrationController {
 			BindingResult bindingResult) {
 		User tempUser = userService.findByEmail(registrationDto.getEmail());
 
-		new UserRegistrationDtoValidator().validate(registrationDto, bindingResult, tempUser);
+		userRegistrationDtoValidator.validate(registrationDto, bindingResult, tempUser);
 		if (bindingResult.hasErrors()) {
 			return "registration";
 		}

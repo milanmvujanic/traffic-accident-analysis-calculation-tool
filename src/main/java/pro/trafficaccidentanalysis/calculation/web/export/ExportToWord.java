@@ -25,15 +25,14 @@ public class ExportToWord {
 		titleRun.setFontSize(20);
 	}
 	
-	private static void setResult(double result, XWPFDocument document) {
+	private static void setResult(String result, XWPFDocument document) {
 		XWPFParagraph para1 = document.createParagraph();
 		para1.setAlignment(ParagraphAlignment.BOTH);
-		String string1 = result + "";
 		XWPFRun para1Run = para1.createRun();
-		para1Run.setText(string1);
+		para1Run.setText(result);
 	}
 	
-	public static void createWord(String documentTitle, String titleText, double result, HttpServletResponse response) {
+	public static void createWord(String documentTitle, String titleText, String result, HttpServletResponse response) {
 		XWPFDocument document = new XWPFDocument();
 		setTitle(titleText, document);
 		setResult(result, document);
