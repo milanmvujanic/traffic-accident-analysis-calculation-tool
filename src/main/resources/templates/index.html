@@ -28,7 +28,7 @@
 				<textarea rows="" cols="" th:text="*{stoppingDistance}">				
 			</textarea>
 				<div class="export">
-					<a th:href="@{'/calculate/exportToWord?result=' + ${calculation.stoppingDistance}}"> <img
+					<a th:href="@{/calculate/exportToWord}"> <img
 						th:src="@{/img/word_icon.jpg}" alt=""
 						th:attr="title=#{exportToWord}" />
 					</a>
