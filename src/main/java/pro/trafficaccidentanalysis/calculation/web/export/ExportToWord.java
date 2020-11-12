@@ -30,7 +30,8 @@ import pro.trafficaccidentanalysis.calculation.web.calculation.StoppingDistance;
 public class ExportToWord {
 
 	static File stylesheet = new File(
-			".\\src\\main\\java\\pro\\trafficaccidentanalysis\\calculation\\web\\export\\MML2OMML.XSL");
+			"/src/main/java/pro/trafficaccidentanalysis/calculation/web/export/MML2OMML.XSL");
+//	".\\src\\main\\java\\pro\\trafficaccidentanalysis\\calculation\\web\\export\\MML2OMML.XSL"
 	static TransformerFactory tFactory = TransformerFactory.newInstance();
 	static StreamSource stylesource = new StreamSource(stylesheet);
 
