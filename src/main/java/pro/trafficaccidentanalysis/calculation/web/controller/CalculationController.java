@@ -51,7 +51,6 @@ public class CalculationController {
 	public void exportToWord(HttpServletResponse response) throws Exception {
 		MessageSourceAccessor accessor = new MessageSourceAccessor(messageSource, LocaleContextHolder.getLocale());
 		ExportToWord.createWord(accessor.getMessage("documentTitle"), accessor.getMessage("stoppingDistanceCalculation"), accessor.getMessage("stoppingDistance"), this.stoppingDistance, response);
-		this.stoppingDistance = null;
 	}	
 	
 }
