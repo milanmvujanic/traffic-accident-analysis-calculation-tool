@@ -16,7 +16,7 @@ pipeline {
    	 	}
    	 	stage ('Building jar') {
    	 		steps {
-   	 			sh 'mvn clean package'
+   	 			sh 'mvn clean install'
    	 		}
    	 	} 
    	 	stage ('Copying jar') {
